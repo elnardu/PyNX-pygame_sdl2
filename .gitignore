@@ -1,3 +1,13 @@
+.bootstrapped
+patchPygame
+patchPyNX
+buildPygame
+prebuildPyNX
+injectPythonModules
+
+# ------------------------
+# GitHub's python template 
+# ------------------------
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
