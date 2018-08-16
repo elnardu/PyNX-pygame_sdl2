@@ -108,6 +108,7 @@ import errno
 # pymodule("pygame_sdl2.time")
 # pymodule("pygame_sdl2.version")
 
+# DO NOT CHANGE THE ORDER
 cythonModules = [
     "pygame_sdl2.error",
     "pygame_sdl2.color",
@@ -208,11 +209,17 @@ cython("pygame_sdl2.mixer_music", orgToWrap=orgToWrap)
 cython("pygame_sdl2.scrap", orgToWrap=orgToWrap)
 cython("pygame_sdl2.render", orgToWrap=orgToWrap)
 
-with open("build_mod/pygame_sdl2/__init__.py", "r+") as f:
-        file_contents = f.read()
-        f.seek(0)
-        f.write("import sys\n")
-        f.write(file_contents)
+# importString = ""
+# for m in reversed(cythonModules):
+#     importString += "import " + orgToWrap[m] + "\n"
+#     importString += "sys.modules['" + m + "'] = " + orgToWrap[m] + "\n"
+
+# with open("build_mod/pygame_sdl2/__init__.py", "r+") as f:
+#     file_contents = f.read()
+#     f.seek(0)
+#     f.write("import sys\n")
+#     f.write(importString)
+#     f.write(file_contents)
 
 # headers = [
 #     "src/pygame_sdl2/pygame_sdl2.h",

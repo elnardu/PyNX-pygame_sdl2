@@ -185,12 +185,6 @@ def cython(name, source=[], orgToWrap={}):
     with open("build_mod/setup/" + orgToWrap[name] + ".setup", "w") as f:
         f.write(setupString)
     
-    with open("build_mod/pygame_sdl2/__init__.py", "r+") as f:
-        file_contents = f.read()
-        f.seek(0)
-        f.write("import " + orgToWrap[name] + "\n")
-        f.write("sys.modules['" + name + "'] = " + orgToWrap[name] + "\n")
-        f.write(file_contents)
 
 
 def find_unnecessary_gen():
